@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **BPM Tap Tempo (v1.0.0)**: First release — tap-tempo BPM computation with sliding tap window, 2s idle reset, interval statistics with min/max confidence range, preset tempo grid (60/90/120/150/180), Web Audio click feedback, clipboard copy, keyboard shortcuts, shareable URL state, and .itsjust.json import/export.
+- **Word Reading Time Estimator (v1.0.0)**: First release — paste-text reading/speaking time estimation with configurable WPM speed presets, custom WPM input, per-paragraph breakdown table, word/sentence/paragraph counts, longest/shortest word statistics, clipboard copy, shareable URL state, and .itsjust.json import/export.
 
 ### Added
 

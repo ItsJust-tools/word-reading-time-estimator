@@ -1,44 +1,50 @@
-# BPM Tap Tempo
+# Word Reading Time Estimator
 
-Tap in rhythm with a song and get an instant BPM estimate. A practical tempo-tapping utility for musicians, DJs and producers.
+Estimate how long any text takes to read or speak. Paste text, pick a speed, and get instant word counts and time estimates - a practical pacing utility for writers, students and presenters.
 
-**Live:** [bpm-tap-tempo.itsjust.tools](https://bpm-tap-tempo.itsjust.tools)
+**Live:** [word-reading-time-estimator.itsjust.tools](https://word-reading-time-estimator.itsjust.tools)
 
 ## Features
 
-- Tap with the big pad, the toolbar button, `Space` or `T` — average BPM updates live
-- Sliding window of recent taps (2–30s, default 10s); the sequence resets after 2 seconds of inactivity
-- Live beat interval in milliseconds alongside BPM
-- BPM confidence range (min/max interval among recent taps)
-- Preset BPM reference grid (60/90/120/150/180) highlighting the nearest preset
-- Audio click feedback via the Web Audio API (toggle with the sidebar switch or `K`)
-- Copy the computed BPM to the clipboard (`C`) with toast feedback
+- Paste large text with live word, character, sentence, and paragraph counts
+- Reading-speed presets: slow (150), average (200), fast (300 WPM), plus a custom WPM field
+- Separate speaking-time mode at 130 WPM default for presentations
+- Per-paragraph breakdown table showing estimated time each paragraph takes
+- Longest and shortest word statistics plus average word length
+- Copy the summary to the clipboard with toast feedback
 - Shareable state via URL, `.itsjust.json` import/export and image/PDF export
-- 100% client-side — no data ever leaves your browser
+- 100% client-side - no data ever leaves your browser
 
-## Keyboard shortcuts
+## Usage
 
-| Key           | Action             |
-| ------------- | ------------------ |
-| `Space` / `T` | Tap                |
-| `R`           | Reset tap sequence |
-| `C`           | Copy BPM           |
-| `K`           | Toggle audio click |
+1. Paste or type text into the input area.
+2. Switch between **Reading time** and **Speaking time** tabs.
+3. Pick a speed preset or enter a custom words-per-minute value in the sidebar.
+4. Toggle the per-paragraph breakdown to see pacing paragraph by paragraph.
+5. Use **Copy summary** or **Save to history** to keep estimates, and the share button to create a URL that restores this state.
+6. Export the report as PNG, JPEG, WebP or PDF when needed.
 
-## Development
+## How it works
 
-```bash
-npm install
-npm run build -w @itsjust/core   # build shared core first
-npm run dev
-npm test
+```
+seconds = (word count / words per minute) x 60
 ```
 
-## Deployment
+Paragraphs are split on blank lines, sentences on `.`, `!` and `?` terminators, and words on whitespace. All analysis runs in the browser; nothing is uploaded.
 
-```bash
-docker build -t itsjust-bpm-tap-tempo .
-docker run -p 3000:3000 itsjust-bpm-tap-tempo
+## Tech
+
+- Next.js App Router + React 19 + TypeScript
+- Vitest unit tests and Playwright e2e smoke test
+- `@itsjust/core` tool shell with import/export and URL sharing
+
+## Scripts
+
+```sh
+npm install
+npm run dev      # local development
+npm test         # unit tests
+npm run build    # production build
 ```
 
 ## License

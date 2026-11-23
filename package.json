@@ -1,14 +1,14 @@
 {
-  "name": "percentage-calculator",
+  "name": "word-reading-time-estimator",
   "version": "1.4.0",
   "private": true,
-  "description": "A tap-tempo metronome utility that computes BPM from rhythmic taps and shows beat timing statistics.",
+  "description": "Estimates reading and speaking time for any pasted text with WPM control, paragraph breakdown, and shareable state.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ItsJust-tools/1795287972.git"
+    "url": "git+https://github.com/ItsJust-tools/word-reading-time-estimator.git"
   },
-  "homepage": "https://github.com/ItsJust-tools/1795287972",
+  "homepage": "https://github.com/ItsJust-tools/word-reading-time-estimator",
   "workspaces": [
     "packages/*"
   ],
